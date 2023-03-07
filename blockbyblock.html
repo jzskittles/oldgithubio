@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Block by Block Sketchfab Extension</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.150.0/examples/jsm/",
+          "jszip": "https://unpkg.com/jszip@3.10.1/dist/jszip.min.js",
+        }
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        font-family: helvetica, arial, sans-serif;
+      }
+
+      #overlay {
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 1;
+        color: white;
+        text-align: center;
+      }
+      .error {
+        color: red;
+      }
+      #fetch-success, #download-error, #unknown-error, #dismiss-btn {
+        display: none;
+      }
+      #overlay {
+        display: none;
+      }
+
+      #attribution-container {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        color: green;
+      }
+      #attribution-container a {
+        color: green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <a href="index">Back to Main Page</a>
+    <canvas></canvas>
+
+    <div id="overlay">
+      <h3>
+        Getting model from Sketchfab...
+      </h3>
+      <h3 id="fetch-success">
+        Successfully fetched model! Loading into the viewer now...
+      </h3>
+      <h3 class="error" id="download-error">
+        Failed to download this model. Make sure you have access to download this model on Sketchfab. Example URL: https://sketchfab.com/3d-models/skull-downloadable-1a9db900738d44298b0bc59f68123393
+      </h3>
+      <h3 class="error" id="unknown-error">
+        Failed to load this model, unknown error. Check the browser console for more details.
+      </h3>
+      <p>
+        <button id="dismiss-btn">Dismiss</button>
+      </p>
+    </div>
+
+
+    <div id="attribution-container">Page is loaded</div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
