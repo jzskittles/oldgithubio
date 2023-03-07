@@ -1,8 +1,7 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config()
+console.log(process.env)
 
 console.log("hi");
-console.log(process.env);
 console.log(process.env.CLIENT_ID);
 
 import * as THREE from "three";
