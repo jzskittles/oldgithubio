@@ -2,7 +2,7 @@ import * as JSZip from "jszip";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
-const CLIENT_ID = process.env.CLIENT_ID || 'INSERT';
+const CLIENT_ID = 'INSERT';
 const AUTHENTICATION_URL = `https://sketchfab.com/oauth2/authorize/?state=123456789&response_type=token&client_id=${CLIENT_ID}`;
 
 function checkStatus(response) {
