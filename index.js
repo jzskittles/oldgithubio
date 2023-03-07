@@ -1,14 +1,8 @@
-require('dotenv').config()
-console.log(process.env)
-
-console.log("hi");
-console.log(process.env.CLIENT_ID);
-
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 import SketchfabIntegration from "./SketchfabIntegration.js";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 const GUI = dat.GUI;
 
